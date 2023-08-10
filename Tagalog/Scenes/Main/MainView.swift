@@ -5,6 +5,10 @@ struct MainView: View {
     
     var body: some View {
         VStack {
+            Button("Add") {
+                
+            }
+            
             AddTranslationView()
             
             List (model.translations, id: \.self.id, selection: $model.selection) { obj in

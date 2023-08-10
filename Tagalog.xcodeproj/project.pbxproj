@@ -15,6 +15,7 @@
 		1DE02B1E2A849609007179D7 /* RealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE02B1D2A849609007179D7 /* RealmWrapper.swift */; };
 		1DE02B212A84A3D4007179D7 /* AddTranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE02B202A84A3D4007179D7 /* AddTranslationView.swift */; };
 		1DE02B242A84A4B1007179D7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE02B232A84A4B1007179D7 /* MainViewModel.swift */; };
+		1DE02B272A851B21007179D7 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1DE02B262A851B21007179D7 /* Essentials */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DE02B1C2A8495EE007179D7 /* RealmSwift in Frameworks */,
+				1DE02B272A851B21007179D7 /* Essentials in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +116,7 @@
 			name = Tagalog;
 			packageProductDependencies = (
 				1DE02B1B2A8495EE007179D7 /* RealmSwift */,
+				1DE02B262A851B21007179D7 /* Essentials */,
 			);
 			productName = Tagalog;
 			productReference = 1DE02B072A849127007179D7 /* Tagalog.app */;
@@ -145,6 +148,7 @@
 			mainGroup = 1DE02AFE2A849127007179D7;
 			packageReferences = (
 				1DE02B1A2A8495EE007179D7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				1DE02B252A851B21007179D7 /* XCRemoteSwiftPackageReference "essentials" */,
 			);
 			productRefGroup = 1DE02B082A849127007179D7 /* Products */;
 			projectDirPath = "";
@@ -382,6 +386,14 @@
 				kind = branch;
 			};
 		};
+		1DE02B252A851B21007179D7 /* XCRemoteSwiftPackageReference "essentials" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@gitlab.com:sergiy.vynnychenko/essentials.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -389,6 +401,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1DE02B1A2A8495EE007179D7 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		1DE02B262A851B21007179D7 /* Essentials */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DE02B252A851B21007179D7 /* XCRemoteSwiftPackageReference "essentials" */;
+			productName = Essentials;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

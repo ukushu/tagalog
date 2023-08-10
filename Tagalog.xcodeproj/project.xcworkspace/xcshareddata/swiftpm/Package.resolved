@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "essentials",
+      "kind" : "remoteSourceControl",
+      "location" : "git@gitlab.com:sergiy.vynnychenko/essentials.git",
+      "state" : {
+        "revision" : "369b1fa50584fa4db90ef5fa3e9f922e77c15a7a",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",
