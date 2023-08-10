@@ -1,3 +1,6 @@
 [submodule "AppCore"]
 	path = AppCore
 	url = git@gitlab.com:sergiy.vynnychenko/AppCore.git
+[submodule "AsyncNinja"]
+	path = AsyncNinja
+	url = git@github.com:serg-vinnie/AsyncNinja.git

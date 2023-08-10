@@ -1,15 +1,27 @@
 import Foundation
 import SwiftUI
+import AppCore
+import AsyncNinja
 
-class MainViewModel: ObservableObject {
+class MainViewModel: NinjaContext.Main, ObservableObject {
+    @Published var dialog : SheetDialogType = .none
+    
     let realmWrap = RealmWrapper()
     @Published var translations: [UniDictObj] = []
     
     @Published var selection: Set<String> = []
     
-    init() {
-        refresh()
-    }
+    override init() {
+        translations = realmWrap.translations.map{ $0 }
+        
+        super.init()
+        
+//        AppCore.signals
+//            .subscribeFor( Signal.TaoGit.GlobalDialogs.Open.self )
+//            .filter{ $0.wndId == self.wndId }
+//            .map { $0.dlg }
+//            .assign(on: self, to: \.dialog)
+}
     
     func refresh() {
         translations = realmWrap.translations

@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AsyncNinja/AsyncNinja.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AppCore/AppCore.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:BDCreator.xcodeproj">
    </FileRef>
 </Workspace>
