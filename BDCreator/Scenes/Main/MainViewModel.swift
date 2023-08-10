@@ -28,11 +28,19 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
             .subscribeFor( Signal.CloseDialog.self)
             .map { _ in SheetDialogType.none }
             .assign( on: self, to: \.dialog )
-}
+        
+        realmWrap.translations.notifications()
+            .map(context: self) { me, _ in me.realmWrap.translations.map{ $0 } }
+            .assign(on: self, to: \.translations)
+    }
     
-    func refresh() {
-        translations = realmWrap.translations
-            .map{ $0 }
+    
+    func delete(translation obj: UniDictObj) {
+        translations.removeFirst(where: { $0.id == obj.id })
+        
+        DispatchQueue.main.async {
+            self.realmWrap.delete(translation: obj)
+        }
     }
 }
 

@@ -2,8 +2,6 @@ import Foundation
 import SwiftUI
 
 struct AddTranslationView: View {
-    let model = MainViewModel.shared
-    
     @State var text: String = ""
     @State var text2: String = ""
     
@@ -26,8 +24,6 @@ struct AddTranslationView: View {
                 
                 Button("Append", role: .destructive) {
                     RealmWrapper.shared.addTranslation(eng: text, to: .Tagalog, toText: text2)
-                    
-                    model.refresh()
                     
                     GlobalDialog.Close()
                 }

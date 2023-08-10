@@ -1,5 +1,6 @@
 import Foundation
 import AppCore
+import SwiftUI
 import RealmSwift
 
 class RealmWrapper {
@@ -7,7 +8,7 @@ class RealmWrapper {
     
     private let realm: Realm
     
-    var translations: [UniDictObj] { realm.objects(UniDictObj.self).map{ $0 } }
+    var translations: Results<UniDictObj> { realm.objects(UniDictObj.self) }
     
     init() {
         let config = Realm.Configuration(encryptionKey: nil)
@@ -33,6 +34,17 @@ class RealmWrapper {
             return false
         }
     }
+    
+    func delete(translation obj: UniDictObj) {
+        do {
+            try realm.write {
+                realm.delete(obj)
+            }
+        } catch let e {
+            let dlg = SheetDialogType.view(view: AnyView( ErrorView(error: e)))
+            GlobalDialog.Open(view: dlg)
+        }
+    }
 }
 
 enum Language: String, RawRepresentable {
@@ -40,6 +52,8 @@ enum Language: String, RawRepresentable {
     case Tagalog
     case Ukrainian
 }
+
+
 
 class UniDictObj: Object {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString

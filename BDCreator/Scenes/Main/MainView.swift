@@ -18,6 +18,11 @@ struct MainView: View {
                     Text(" => ")
                     Text("\(obj.translation)")
                 }
+                .contextMenu{
+                    Button("Delete") {
+                        model.delete(translation: obj)
+                    }
+                }
             }
         }
         .sheet(sheet: model.dialog )
