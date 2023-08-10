@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct TagalogApp: App {
+struct BDCreatorApp: App {
     @State var model = MainViewModel()
     
     var body: some Scene {

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "git@gitlab.com:sergiy.vynnychenko/essentials.git",
       "state" : {
-        "revision" : "369b1fa50584fa4db90ef5fa3e9f922e77c15a7a",
-        "version" : "1.0.0"
+        "branch" : "master",
+        "revision" : "8756183aada7a14071268e6ebb26ae5805c1c2b0"
       }
     },
     {
