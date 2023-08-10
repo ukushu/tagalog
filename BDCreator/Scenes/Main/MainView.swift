@@ -1,15 +1,16 @@
 import SwiftUI
+import AppCore
 
 struct MainView: View {
-    @Binding var model: MainViewModel
+    @ObservedObject var model = MainViewModel.shared
     
     var body: some View {
         VStack {
-            Button("Add") {
+            Button("+") {
+                let dlg = SheetDialogType.view(view: AnyView(AddTranslationView()))
                 
+                GlobalDialog.Open(view: dlg)
             }
-            
-            AddTranslationView()
             
             List (model.translations, id: \.self.id, selection: $model.selection) { obj in
                 HStack(alignment: .center) {
@@ -19,6 +20,7 @@ struct MainView: View {
                 }
             }
         }
+        .sheet(sheet: model.dialog )
         .padding()
     }
 }

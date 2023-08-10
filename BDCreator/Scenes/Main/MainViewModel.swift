@@ -4,6 +4,8 @@ import AppCore
 import AsyncNinja
 
 class MainViewModel: NinjaContext.Main, ObservableObject {
+    static let shared = MainViewModel()
+    
     @Published var dialog : SheetDialogType = .none
     
     let realmWrap = RealmWrapper()
@@ -11,16 +13,21 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
     
     @Published var selection: Set<String> = []
     
-    override init() {
-        translations = realmWrap.translations.map{ $0 }
+    private override init() {
+        print("MainViewModel init")
+        translations = realmWrap.translations.map { $0 }
         
         super.init()
         
-//        AppCore.signals
-//            .subscribeFor( Signal.TaoGit.GlobalDialogs.Open.self )
-//            .filter{ $0.wndId == self.wndId }
-//            .map { $0.dlg }
-//            .assign(on: self, to: \.dialog)
+        AppCore.signals
+            .subscribeFor( Signal.OpenDialog.self )
+            .map { $0.dlg }
+            .assign(on: self, to: \.dialog)
+        
+        AppCore.signals
+            .subscribeFor( Signal.CloseDialog.self)
+            .map { _ in SheetDialogType.none }
+            .assign( on: self, to: \.dialog )
 }
     
     func refresh() {

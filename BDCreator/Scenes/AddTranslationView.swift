@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct AddTranslationView: View {
-    let model = MainViewModel()
+    let model = MainViewModel.shared
     
     @State var text: String = ""
     @State var text2: String = ""
@@ -19,10 +19,21 @@ struct AddTranslationView: View {
                 TextField("Tagalog", text: $text2)
             }
             
-            Button("Append") {
-                RealmWrapper.shared.addTranslation(eng: text, to: .Tagalog, toText: text2)
-                model.refresh()
+            HStack {
+                Button("Cancel", role: .cancel) {
+                    GlobalDialog.Close()
+                }
+                
+                Button("Append", role: .destructive) {
+                    RealmWrapper.shared.addTranslation(eng: text, to: .Tagalog, toText: text2)
+                    
+                    model.refresh()
+                    
+                    GlobalDialog.Close()
+                }
             }
         }
+        .frame(minWidth: 350)
+        .padding(20)
     }
 }

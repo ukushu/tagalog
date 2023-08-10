@@ -15,6 +15,8 @@
 		1D3CFCE22A85264300BF2816 /* Essentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1D3CFCE02A85262000BF2816 /* Essentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1D3CFCE42A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */; };
 		1D3CFCE52A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1DA3CB5E2A85A3890030240D /* GlobalDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3CB5D2A85A3890030240D /* GlobalDialogs.swift */; };
+		1DA3CB602A85A3B40030240D /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3CB5F2A85A3B40030240D /* Signal.swift */; };
 		1DE02B352A851D00007179D7 /* BDCreatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE02B342A851D00007179D7 /* BDCreatorApp.swift */; };
 		1DE02B392A851D01007179D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE02B382A851D01007179D7 /* Assets.xcassets */; };
 		1DE02B3C2A851D01007179D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE02B3B2A851D01007179D7 /* Preview Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCDC2A85258600BF2816 /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinjaReactiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DA3CB5D2A85A3890030240D /* GlobalDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDialogs.swift; sourceTree = "<group>"; };
+		1DA3CB5F2A85A3B40030240D /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		1DE02B312A851D00007179D7 /* BDCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE02B342A851D00007179D7 /* BDCreatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDCreatorApp.swift; sourceTree = "<group>"; };
 		1DE02B382A851D01007179D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1DA3CB5C2A85A3790030240D /* GlobalDialogs */ = {
+			isa = PBXGroup;
+			children = (
+				1DA3CB5D2A85A3890030240D /* GlobalDialogs.swift */,
+			);
+			path = GlobalDialogs;
+			sourceTree = "<group>";
+		};
 		1DE02B282A851D00007179D7 = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +115,9 @@
 			children = (
 				1DE02B342A851D00007179D7 /* BDCreatorApp.swift */,
 				1DE02B432A851D24007179D7 /* RealmWrapper.swift */,
+				1DA3CB5F2A85A3B40030240D /* Signal.swift */,
 				1DE02B452A851D3A007179D7 /* Scenes */,
+				1DA3CB5C2A85A3790030240D /* GlobalDialogs */,
 				1DE02B382A851D01007179D7 /* Assets.xcassets */,
 				1DE02B3D2A851D01007179D7 /* BDCreator.entitlements */,
 				1DE02B3A2A851D01007179D7 /* Preview Content */,
@@ -214,6 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA3CB5E2A85A3890030240D /* GlobalDialogs.swift in Sources */,
+				1DA3CB602A85A3B40030240D /* Signal.swift in Sources */,
 				1DE02B442A851D24007179D7 /* RealmWrapper.swift in Sources */,
 				1DE02B4C2A851D84007179D7 /* AddTranslationView.swift in Sources */,
 				1DE02B482A851D57007179D7 /* MainView.swift in Sources */,
