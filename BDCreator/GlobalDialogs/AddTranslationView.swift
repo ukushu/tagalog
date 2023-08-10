@@ -23,6 +23,8 @@ struct AddTranslationView: View {
                 }
                 
                 Button("Append", role: .destructive) {
+                    guard text.count > 0 && text2.count > 0 else { return }
+                    
                     RealmWrapper.shared.addTranslation(eng: text, to: .Tagalog, toText: text2)
                     
                     GlobalDialog.Close()
