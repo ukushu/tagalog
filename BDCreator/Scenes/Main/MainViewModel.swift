@@ -12,19 +12,15 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
     @Published var translations: [UniDictObj] = []
     @Published var allLessonsNumbers: [Int]
     
-    @Published var selection: Set<String> = []
-    
+    @Published var selection: Set<UniDictObj> = []
     
     @Published var filterLanguage: Language = .Tagalog
     @Published var filterLessonNum: Int = 1
-    
     
     private override init() {
         print("MainViewModel init")
         translations = realmWrap.translations.map { $0 }
         allLessonsNumbers = realmWrap.allLesssonsNums
-            
-        
         
         super.init()
         
@@ -46,7 +42,6 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
             }
     }
     
-    
     func delete(translation obj: UniDictObj) {
         translations.removeFirst(where: { $0.id == obj.id })
         
@@ -55,13 +50,3 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
         }
     }
 }
-
-//class Translator {
-//    let lengFrom: Language
-//    let lengTo: Language
-//
-//    init(lengFrom: Language, lengTo: Language) {
-//        self.lengFrom = lengFrom
-//        self.lengTo = lengTo
-//    }
-//}

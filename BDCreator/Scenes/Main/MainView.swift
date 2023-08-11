@@ -23,19 +23,29 @@ struct MainView: View {
 extension MainView {
     func CurrentBdList() -> some View {
         VStack {
-            List (model.translations, id: \.self.id, selection: $model.selection) { obj in
-                HStack(alignment: .center) {
-                    Text("\(obj.lessonNum?.description ?? "_" ) | ")
-                    Text("\(obj.langTo) | ")
-                    
-                    Text("\(obj.eng )")
-                    Text(" => ")
-                    Text("\(obj.translation)")
-                }
-                .contextMenu {
-                    Button("Delete") {
-                        model.delete(translation: obj)
+            HSplitView{
+                List (model.translations, id: \.self, selection: $model.selection) { obj in
+                    HStack(alignment: .center) {
+                        Text("\(obj.lessonNum?.description ?? "_" ) | ")
+                        Text("\(obj.langTo) | ")
+                        
+                        Text("\(obj.eng )")
+                        Text(" => ")
+                        Text("\(obj.translation)")
                     }
+                    .contextMenu {
+                        Button("Delete") {
+                            model.delete(translation: obj)
+                        }
+                    }
+                }
+                
+                if model.selection.count == 1 {
+                    List (model.selection.first!.wordsUsed, id: \.self) { word in
+                        Text(word)
+                            .fixedSize()
+                    }
+                    .frame(minWidth: 170)
                 }
             }
             
