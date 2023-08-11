@@ -47,7 +47,7 @@ class RealmWrapper {
     }
 }
 
-enum Language: String, RawRepresentable {
+enum Language: String, CaseIterable ,RawRepresentable {
     case English
     case Tagalog
     case Ukrainian
