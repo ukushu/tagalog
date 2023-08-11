@@ -11,7 +11,7 @@ class RealmWrapper {
     var translations: Results<UniDictObj> { realm.objects(UniDictObj.self) }
     
     init() {
-        let config = Realm.Configuration(encryptionKey: nil)
+        let config = Realm.Configuration(encryptionKey: nil, schemaVersion: 2)
         
         self.realm = try! Realm(configuration: config)
         
@@ -62,4 +62,6 @@ class UniDictObj: Object {
     @Persisted var langTo = Language.English.rawValue
     @Persisted var eng: String
     @Persisted var translation: String
+    
+    @Persisted var lessonNum: Int?
 }

@@ -14,6 +14,7 @@ struct MainView: View {
             
             List (model.translations, id: \.self.id, selection: $model.selection) { obj in
                 HStack(alignment: .center) {
+                    Text("\(obj.lessonNum?.description ?? "_" ) | ")
                     Text("\(obj.eng )")
                     Text(" => ")
                     Text("\(obj.translation)")

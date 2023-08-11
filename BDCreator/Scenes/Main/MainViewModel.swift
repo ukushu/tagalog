@@ -30,7 +30,7 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
             .assign( on: self, to: \.dialog )
         
         realmWrap.translations.notifications()
-            .map(context: self) { me, _ in me.realmWrap.translations.map{ $0 } }
+            .map(context: self) { me, _ in me.realmWrap.translations.map{ $0 }.sorted(by: { $0.lessonNum ?? 999 < $1.lessonNum ?? 999 }) }
             .assign(on: self, to: \.translations)
     }
     

@@ -11,9 +11,10 @@ struct AddTranslationView: View {
     
     @State var transSelection = Language.Tagalog
     
-    
     @State var text: String = ""
     @State var text2: String = ""
+    
+    @State var lessonNum: String = "9999"
     
     var body: some View {
         VStack {
@@ -23,6 +24,23 @@ struct AddTranslationView: View {
                 }
             }
             .pickerStyle(.menu)
+            
+            HStack{
+                Text("Lesson # :")
+                
+                TextField("", text: $lessonNum)
+                    .onChange(of: lessonNum) { _ in
+                        let tmp = lessonNum.filter{ $0.isNumber }
+                        
+                        guard lessonNum == lessonNum else { return }
+                        
+                        lessonNum = tmp
+                    }
+                
+                Button("-") {
+                    lessonNum = ""
+                }
+            }
             
             HStack {
                 Text("Eng:         ")
