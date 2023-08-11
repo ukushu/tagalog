@@ -6,6 +6,8 @@ struct AddTranslationView: View {
     
     @State var text: String = ""
     @State var text2: String = ""
+    @State var audioUrl: String = ""
+    
     
     @State var lessonNum: String = "9999"
     
@@ -46,6 +48,12 @@ struct AddTranslationView: View {
             }
             
             HStack {
+                Text("Audio:      ")
+                TextField("Audio", text: $audioUrl)
+                    .focused($focus, equals: .f4)
+            }
+            
+            HStack {
                 Button("Cancel", role: .cancel) {
                     GlobalDialog.Close()
                 }
@@ -58,6 +66,7 @@ struct AddTranslationView: View {
                     obj.eng = text
                     obj.translation = text2
                     obj.lessonNum = lessonNum.count == 0 ? nil : Int(lessonNum)
+                    obj.audioUrl = audioUrl.count == 0 ? nil : audioUrl
                     
                     RealmWrapper.shared.addTranslation(obj: obj)
                     
@@ -96,7 +105,7 @@ private extension AddTranslationView {
     }
     
     enum Field: Int, CaseIterable {
-        case f1, f2, f3
+        case f1, f2, f3, f4
     }
     
     func focusPreviousField() {
