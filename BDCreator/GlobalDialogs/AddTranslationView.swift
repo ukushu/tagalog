@@ -60,7 +60,13 @@ struct AddTranslationView: View {
                 Button("Append", role: .destructive) {
                     guard text.count > 0 && text2.count > 0 else { return }
                     
-                    RealmWrapper.shared.addTranslation(eng: text, to: transSelection, toText: text2)
+                    var obj = UniDictObj()
+                    obj.langTo = transSelection.rawValue
+                    obj.eng = text
+                    obj.translation = text2
+                    obj.lessonNum = lessonNum.count == 0 ? nil : Int(lessonNum)
+                    
+                    RealmWrapper.shared.addTranslation(obj: obj)
                     
                     GlobalDialog.Close()
                 }

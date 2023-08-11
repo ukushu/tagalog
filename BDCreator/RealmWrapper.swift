@@ -19,15 +19,10 @@ class RealmWrapper {
     }
     
     @discardableResult
-    func addTranslation(eng: String, to: Language, toText: String ) -> Bool {
-        let data = UniDictObj()
-        data.langTo = to.rawValue
-        data.eng = eng
-        data.translation = toText
-        
+    func addTranslation(obj: UniDictObj) -> Bool {
         do {
             try realm.write {
-                realm.add(data)
+                realm.add(obj)
             }
             return true
         } catch {
