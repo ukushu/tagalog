@@ -16,6 +16,8 @@ struct AddTranslationView: View {
     
     @State var lessonNum: String = "9999"
     
+    @FocusState private var focus: Field?
+    
     var body: some View {
         VStack {
             Picker("Language to: ", selection: $transSelection) {
@@ -36,6 +38,7 @@ struct AddTranslationView: View {
                         
                         lessonNum = tmp
                     }
+                    .focused($focus, equals: .f1)
                 
                 Button("-") {
                     lessonNum = ""
@@ -45,11 +48,13 @@ struct AddTranslationView: View {
             HStack {
                 Text("Eng:         ")
                 TextField("Eng", text: $text)
+                    .focused($focus, equals: .f2)
             }
             
             HStack {
                 Text("Translate:")
                 TextField("Translate", text: $text2)
+                    .focused($focus, equals: .f3)
             }
             
             HStack {
@@ -74,5 +79,46 @@ struct AddTranslationView: View {
         }
         .frame(minWidth: 350)
         .padding(20)
+        .onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.focus = .f1
+                self.keyboardFocusControlsSubscription()
+            }
+        }
+    }
+}
+
+
+private extension AddTranslationView {
+    func keyboardFocusControlsSubscription() {
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (aEvent) -> NSEvent? in
+            print(aEvent.keyCode)
+            
+            guard focus != nil else { return nil }
+            
+            if aEvent.keyCode == 125 { // down arrow
+                focusNextField()
+            } else if aEvent.keyCode == 126 { // up arrow
+                focusPreviousField()
+            }
+            
+            return aEvent
+        }
+    }
+    
+    enum Field: Int, CaseIterable {
+        case f1, f2, f3
+    }
+    
+    func focusPreviousField() {
+        focus = focus.map {
+            Field(rawValue: $0.rawValue - 1) ?? Field.allCases.last!
+        }
+    }
+    
+    func focusNextField() {
+        focus = focus.map {
+            Field(rawValue: $0.rawValue + 1) ?? Field.allCases.first!
+        }
     }
 }
