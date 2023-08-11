@@ -10,15 +10,17 @@ struct MainView: View {
                 CurrentBdList()
                     .tabItem { Label("BD list", systemImage: "list.dash") }
                 
-                Text("Issues")
+                IssuesView()
                     .tabItem { Label("Issues", systemImage: "list.dash") }
             }
         }
         .sheet(sheet: model.dialog )
         .padding()
     }
-    
-    
+}
+
+// CurrentBdList
+extension MainView {
     func CurrentBdList() -> some View {
         VStack {
             List (model.translations, id: \.self.id, selection: $model.selection) { obj in
@@ -38,6 +40,20 @@ struct MainView: View {
             }
             
             HStack {
+                Text("Filters: ")
+                
+                LanguageSelector(text: "To lang:", sel: $model.filterLanguage)
+                    .frame(maxWidth: 150)
+                
+                Picker("Lesson:", selection: $model.filterLessonNum) {
+                    ForEach(model.allLessonsNumbers, id: \.self) {
+                        Text("\($0)")
+                    }
+                }
+                .pickerStyle(.menu)
+                .frame(maxWidth: 100)
+                
+                
                 Space()
                 
                 Button("+") {
@@ -50,3 +66,11 @@ struct MainView: View {
         }
     }
 }
+
+// Issues
+extension MainView {
+    func IssuesView() -> some View {
+        Text("Issues")
+    }
+}
+

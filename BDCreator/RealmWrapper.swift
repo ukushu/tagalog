@@ -10,6 +10,8 @@ class RealmWrapper {
     
     var translations: Results<UniDictObj> { realm.objects(UniDictObj.self) }
     
+    var allLesssonsNums: [Int] { realm.objects(UniDictObj.self).distinct(by: ["lessonNum"]).compactMap{ $0.lessonNum }.sorted() }
+    
     init() {
         let config = Realm.Configuration(encryptionKey: nil, schemaVersion: 2)
         
@@ -41,14 +43,6 @@ class RealmWrapper {
         }
     }
 }
-
-enum Language: String, CaseIterable ,RawRepresentable {
-    case English
-    case Tagalog
-    case Ukrainian
-}
-
-
 
 class UniDictObj: Object {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString

@@ -2,13 +2,6 @@ import Foundation
 import SwiftUI
 
 struct AddTranslationView: View {
-    let translations = {
-        var trans = Language.allCases
-        trans.remove(at: 0)
-        
-        return trans
-    }()
-    
     @State var transSelection = Language.Tagalog
     
     @State var text: String = ""
@@ -20,12 +13,7 @@ struct AddTranslationView: View {
     
     var body: some View {
         VStack {
-            Picker("Language to: ", selection: $transSelection) {
-                ForEach(translations, id: \.self) {
-                    Text($0.rawValue)
-                }
-            }
-            .pickerStyle(.menu)
+            LanguageSelector(text: "Language to: ", sel: $transSelection)
             
             HStack{
                 Text("Lesson # :")

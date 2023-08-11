@@ -8,14 +8,23 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
     
     @Published var dialog : SheetDialogType = .none
     
-    let realmWrap = RealmWrapper()
+    private let realmWrap = RealmWrapper()
     @Published var translations: [UniDictObj] = []
+    @Published var allLessonsNumbers: [Int]
     
     @Published var selection: Set<String> = []
+    
+    
+    @Published var filterLanguage: Language = .Tagalog
+    @Published var filterLessonNum: Int = 1
+    
     
     private override init() {
         print("MainViewModel init")
         translations = realmWrap.translations.map { $0 }
+        allLessonsNumbers = realmWrap.allLesssonsNums
+            
+        
         
         super.init()
         
@@ -32,6 +41,9 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
         realmWrap.translations.notifications()
             .map(context: self) { me, _ in me.realmWrap.translations.map{ $0 }.sorted(by: { $0.lessonNum ?? 999 < $1.lessonNum ?? 999 }) }
             .assign(on: self, to: \.translations)
+            .onUpdate(context: self){ me, _ in
+                me.allLessonsNumbers = me.realmWrap.allLesssonsNums
+            }
     }
     
     
