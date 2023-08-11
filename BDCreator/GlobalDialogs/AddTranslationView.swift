@@ -65,7 +65,7 @@ struct AddTranslationView: View {
                 Button("Append", role: .destructive) {
                     guard text.count > 0 && text2.count > 0 else { return }
                     
-                    var obj = UniDictObj()
+                    let obj = UniDictObj()
                     obj.langTo = transSelection.rawValue
                     obj.eng = text
                     obj.translation = text2
@@ -92,14 +92,15 @@ struct AddTranslationView: View {
 private extension AddTranslationView {
     func keyboardFocusControlsSubscription() {
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (aEvent) -> NSEvent? in
-            print(aEvent.keyCode)
-            
             guard focus != nil else { return nil }
             
-            if aEvent.keyCode == 125 { // down arrow
+            switch aEvent.keyCode {
+            case 125: // down arrow
                 focusNextField()
-            } else if aEvent.keyCode == 126 { // up arrow
+            case 126: // up arrow
                 focusPreviousField()
+            default:
+                break
             }
             
             return aEvent
