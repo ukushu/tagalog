@@ -20,21 +20,30 @@ struct AddTranslationView: View {
         VStack {
             LanguageSelector(text: "Language to: ", sel: $transSelection)
             
-            HStack{
-                Text("Lesson # :")
+            
+            HStack {
+                Toggle(isOn: $isWord) { Text("Is word") }
                 
-                TextField("", text: $lessonNum)
-                    .onChange(of: lessonNum) { _ in
-                        let tmp = lessonNum.filter{ $0.isNumber }
-                        
-                        guard lessonNum == lessonNum else { return }
-                        
-                        lessonNum = tmp
+                Toggle(isOn: $isPhrase) { Text("Is phrase") }
+            }
+            
+            if isPhrase {
+                HStack {
+                    Text("Lesson # :")
+                    
+                    TextField("", text: $lessonNum)
+                        .onChange(of: lessonNum) { _ in
+                            let tmp = lessonNum.filter{ $0.isNumber }
+                            
+                            guard lessonNum == lessonNum else { return }
+                            
+                            lessonNum = tmp
+                        }
+                        .focused($focus, equals: .f1)
+                    
+                    Button("-") {
+                        lessonNum = ""
                     }
-                    .focused($focus, equals: .f1)
-                
-                Button("-") {
-                    lessonNum = ""
                 }
             }
             
@@ -57,12 +66,6 @@ struct AddTranslationView: View {
             }
             
             HStack {
-                Toggle(isOn: $isWord) { Text("Is word") }
-                
-                Toggle(isOn: $isPhrase) { Text("Is phrase") }
-            }
-            
-            HStack {
                 Button("Cancel", role: .cancel) {
                     GlobalDialog.Close()
                 }
@@ -74,7 +77,9 @@ struct AddTranslationView: View {
                     obj.langTo = transSelection.rawValue
                     obj.eng = text
                     obj.translation = text2
-                    obj.lessonNum = lessonNum.count == 0 ? nil : Int(lessonNum)
+                    if isPhrase {
+                        obj.lessonNum = lessonNum.count == 0 ? nil : Int(lessonNum)
+                    }
                     obj.audioUrl = audioUrl.count == 0 ? nil : audioUrl
                     obj.isWord = isWord
                     obj.isPhrase = isPhrase
@@ -83,7 +88,7 @@ struct AddTranslationView: View {
                     
                     GlobalDialog.Close()
                 }
-                    .disabled(isWord == false && isPhrase == false)
+                .disabled(isWord == false && isPhrase == false)
             }
         }
         .frame(minWidth: 350)
