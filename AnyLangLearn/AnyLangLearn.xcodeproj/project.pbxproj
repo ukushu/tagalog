@@ -21,6 +21,7 @@
 		1D3A86082A887B9F0081857F /* Essentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1D3A86062A887B210081857F /* Essentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1D3A860A2A888A940081857F /* Game1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86092A888A940081857F /* Game1View.swift */; };
 		1D3A860D2A888D6F0081857F /* Game0View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A860C2A888D6F0081857F /* Game0View.swift */; };
+		1D3A860F2A888FD90081857F /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A860E2A888FD90081857F /* TODO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,7 @@
 		1D3A86022A887AED0081857F /* AsyncNinjaReactiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinjaReactiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3A86092A888A940081857F /* Game1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game1View.swift; sourceTree = "<group>"; };
 		1D3A860C2A888D6F0081857F /* Game0View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game0View.swift; sourceTree = "<group>"; };
+		1D3A860E2A888FD90081857F /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		1D3A85DF2A886E160081857F = {
 			isa = PBXGroup;
 			children = (
+				1D3A860E2A888FD90081857F /* TODO.swift */,
 				1D3A85EA2A886E160081857F /* AnyLangLearn */,
 				1D3A85E92A886E160081857F /* Products */,
 				1D3A85FA2A887AA00081857F /* Frameworks */,
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3A860F2A888FD90081857F /* TODO.swift in Sources */,
 				1D3A85EE2A886E160081857F /* MainView.swift in Sources */,
 				1D3A85EC2A886E160081857F /* AnyLangLearnApp.swift in Sources */,
 				1D3A860A2A888A940081857F /* Game1View.swift in Sources */,
