@@ -13,6 +13,9 @@ struct AddTranslationView: View {
     
     @FocusState private var focus: Field?
     
+    @State var isWord: Bool = false
+    @State var isPhrase: Bool = false
+    
     var body: some View {
         VStack {
             LanguageSelector(text: "Language to: ", sel: $transSelection)
@@ -54,6 +57,12 @@ struct AddTranslationView: View {
             }
             
             HStack {
+                Toggle(isOn: $isWord) { Text("Is word") }
+                
+                Toggle(isOn: $isPhrase) { Text("Is phrase") }
+            }
+            
+            HStack {
                 Button("Cancel", role: .cancel) {
                     GlobalDialog.Close()
                 }
@@ -67,11 +76,14 @@ struct AddTranslationView: View {
                     obj.translation = text2
                     obj.lessonNum = lessonNum.count == 0 ? nil : Int(lessonNum)
                     obj.audioUrl = audioUrl.count == 0 ? nil : audioUrl
+                    obj.isWord = isWord
+                    obj.isPhrase = isPhrase
                     
                     RealmWrapper.shared.addTranslation(obj: obj)
                     
                     GlobalDialog.Close()
                 }
+                    .disabled(isWord == false && isPhrase == false)
             }
         }
         .frame(minWidth: 350)

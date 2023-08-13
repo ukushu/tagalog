@@ -13,7 +13,7 @@ class RealmWrapper {
     var allLesssonsNums: [Int] { realm.objects(UniDictObj.self).distinct(by: ["lessonNum"]).compactMap{ $0.lessonNum }.sorted() }
     
     init() {
-        let config = Realm.Configuration(encryptionKey: nil, schemaVersion: 3)
+        let config = Realm.Configuration(encryptionKey: nil, schemaVersion: 4)
         
         self.realm = try! Realm(configuration: config)
         
@@ -55,6 +55,9 @@ class UniDictObj: Object {
     @Persisted var lessonNum: Int?
    
     @Persisted var audioUrl: String? //https://www.lingohut.com/flash/lht/mp3/790001/Hello.mp3
+    
+    @Persisted var isWord: Bool
+    @Persisted var isPhrase: Bool
 }
 
 
