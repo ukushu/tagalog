@@ -23,7 +23,7 @@ struct MainView: View {
 extension MainView {
     func CurrentBdList() -> some View {
         VStack {
-            HSplitView{
+            HSplitView {
                 List (model.translations, id: \.self, selection: $model.selection) { obj in
                     HStack(alignment: .center) {
                         Text("\(obj.lessonNum?.description ?? "_" ) | ")
@@ -33,11 +33,26 @@ extension MainView {
                         Text(" => ")
                         Text("\(obj.translation)")
                     }
-                    .contextMenu {
+                    .makeFullyIntaractable()
+                    .contextMenu{
+                        Button("Edit") {
+                            model.modify(obj: obj)
+                        }
+                        
+                        Divider()
+                        
                         Button("Delete") {
                             model.delete(translation: obj)
                         }
                     }
+                    
+                    
+//                    .onTapGesture {
+//                        model.selection = [obj]
+//                    }
+//                    .highPriorityGesture(
+//                        TapGesture(count:2) .onEnded({ model.modify(obj: obj) })
+//                    )
                 }
                 
                 if model.selection.count == 1 {
@@ -77,6 +92,14 @@ extension MainView {
 extension MainView {
     func IssuesView() -> some View {
         Text("Issues")
+    }
+}
+
+fileprivate extension MainViewModel {
+    func modify(obj: UniDictObj) {
+        let dlg = SheetDialogType.view(view: AnyView(AddTranslationView(obj: obj) ))
+        
+        GlobalDialog.Open(view: dlg)
     }
 }
 

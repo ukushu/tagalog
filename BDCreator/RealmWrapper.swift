@@ -32,6 +32,28 @@ class RealmWrapper {
         }
     }
     
+    @discardableResult
+    func modify(key: String, withValues obj: UniDictObj) -> Bool {
+        do {
+            try realm.write {
+                guard let tmp = realm.object(ofType: UniDictObj.self, forPrimaryKey: key) else { return false }
+                
+                tmp.isWord = obj.isWord
+                tmp.isPhrase = obj.isPhrase
+                tmp.audioUrl = obj.audioUrl
+                tmp.eng = obj.eng
+                tmp.translation = obj.translation
+                tmp.langTo = obj.langTo
+                tmp.lessonNum = obj.lessonNum
+                
+                return true
+            }
+            return true
+        } catch {
+            return false
+        }
+    }
+    
     func delete(translation obj: UniDictObj) {
         do {
             try realm.write {
@@ -54,7 +76,7 @@ class UniDictObj: Object {
     
     @Persisted var lessonNum: Int?
    
-    @Persisted var audioUrl: String? //https://www.lingohut.com/flash/lht/mp3/790001/Hello.mp3
+    @Persisted var audioUrl: String?
     
     @Persisted var isWord: Bool
     @Persisted var isPhrase: Bool

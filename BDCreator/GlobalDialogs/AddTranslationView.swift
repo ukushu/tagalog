@@ -4,10 +4,9 @@ import SwiftUI
 struct AddTranslationView: View {
     @State var transSelection = Language.Tagalog
     
-    @State var text: String = ""
-    @State var text2: String = ""
+    @State var eng: String = ""
+    @State var translation: String = ""
     @State var audioUrl: String = ""
-    
     
     @State var lessonNum: String = "9999"
     
@@ -16,10 +15,28 @@ struct AddTranslationView: View {
     @State var isWord: Bool = false
     @State var isPhrase: Bool = false
     
+    fileprivate let viewType: ViewType
+    let id: String
+    
+    init() {
+        viewType = .add
+        id = ""
+    }
+    
+    init(obj: UniDictObj) {
+        self.audioUrl = obj.audioUrl ?? ""
+        self.lessonNum = obj.lessonNum.map{ "\($0)" } ?? ""
+        self.isWord = obj.isWord
+        self.isPhrase = obj.isPhrase
+        self.eng = obj.eng
+        self.translation = obj.translation
+        viewType = .modify
+        self.id = obj.id
+    }
+    
     var body: some View {
         VStack {
             LanguageSelector(text: "Language to: ", sel: $transSelection)
-            
             
             HStack {
                 Toggle(isOn: $isWord) { Text("Is word") }
@@ -49,13 +66,13 @@ struct AddTranslationView: View {
             
             HStack {
                 Text("Eng:         ")
-                TextField("Eng", text: $text)
+                TextField("Eng", text: $eng)
                     .focused($focus, equals: .f2)
             }
             
             HStack {
                 Text("Translate:")
-                TextField("Translate", text: $text2)
+                TextField("Translate", text: $translation)
                     .focused($focus, equals: .f3)
             }
             
@@ -70,21 +87,25 @@ struct AddTranslationView: View {
                     GlobalDialog.Close()
                 }
                 
-                Button("Append", role: .destructive) {
-                    guard text.count > 0 && text2.count > 0 else { return }
+                Button(viewType.rawValue , role: .destructive) {
+                    guard eng.count > 0 && translation.count > 0 else { return }
                     
                     let obj = UniDictObj()
                     obj.langTo = transSelection.rawValue
-                    obj.eng = text
-                    obj.translation = text2
+                    obj.eng = eng
+                    obj.translation = translation
                     if isPhrase {
                         obj.lessonNum = lessonNum.count == 0 ? nil : Int(lessonNum)
                     }
                     obj.audioUrl = audioUrl.count == 0 ? nil : audioUrl
                     obj.isWord = isWord
                     obj.isPhrase = isPhrase
-                    
-                    RealmWrapper.shared.addTranslation(obj: obj)
+                        
+                    if viewType == .add {
+                        RealmWrapper.shared.addTranslation(obj: obj)
+                    } else {
+                        RealmWrapper.shared.modify(key: id, withValues: obj)
+                    }
                     
                     GlobalDialog.Close()
                 }
@@ -123,6 +144,11 @@ private extension AddTranslationView {
     
     enum Field: Int, CaseIterable {
         case f1, f2, f3, f4
+    }
+    
+    enum ViewType: String {
+        case add = "Add"
+        case modify = "Modify"
     }
     
     func focusPreviousField() {
