@@ -25,7 +25,7 @@ struct PhraseDisplayerView: View {
         VStack {
             VStack{
                 HStack {
-                    Text("hello world")
+                    Text(model.eng)
                     Space()
                 }
             }
