@@ -31,8 +31,6 @@ struct PhraseDisplayerView: View {
             }
             .padding()
             .frame(minHeight: 20)
-            .background(.gray.opacity(0.2))
-            
             
             List (phrases, id: \.self, selection: $selection) { phrase in
                 Text(phrase)
