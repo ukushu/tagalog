@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3A86112A88A2680081857F /* PhraseDisplayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86102A88A2680081857F /* PhraseDisplayerView.swift */; };
 		1D3CFCDA2A85242200BF2816 /* AsyncNinja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */; };
 		1D3CFCDB2A85242200BF2816 /* AsyncNinja.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D3CFCDD2A85258600BF2816 /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCDC2A85258600BF2816 /* AppCore.framework */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D3A86102A88A2680081857F /* PhraseDisplayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDisplayerView.swift; sourceTree = "<group>"; };
 		1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCDC2A85258600BF2816 /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinjaReactiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 			children = (
 				1DE02B472A851D57007179D7 /* MainView.swift */,
 				1DE02B492A851D69007179D7 /* MainViewModel.swift */,
+				1D3A86102A88A2680081857F /* PhraseDisplayerView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				1D6908342A85DC5D00FAE305 /* DropDown.swift in Sources */,
 				1DA3CB5E2A85A3890030240D /* GlobalDialogs.swift in Sources */,
 				1DA3CB602A85A3B40030240D /* Signal.swift in Sources */,
+				1D3A86112A88A2680081857F /* PhraseDisplayerView.swift in Sources */,
 				1DE02B442A851D24007179D7 /* RealmWrapper.swift in Sources */,
 				1DE02B4C2A851D84007179D7 /* AddTranslationView.swift in Sources */,
 				1DE02B482A851D57007179D7 /* MainView.swift in Sources */,

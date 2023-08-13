@@ -41,11 +41,7 @@ extension MainView {
                 }
                 
                 if model.selection.count == 1 {
-                    List (model.selection.first!.wordsUsed, id: \.self) { word in
-                        Text(word)
-                            .fixedSize()
-                    }
-                    .frame(minWidth: 170)
+                    PhraseDisplayerView(model: model.selection)
                 }
             }
             

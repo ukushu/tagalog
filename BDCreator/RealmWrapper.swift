@@ -60,11 +60,12 @@ class UniDictObj: Object {
 
 
 extension UniDictObj {
-    var wordsUsed: [String.SubSequence] {
+    var wordsUsed: [String] {
         translation
             .replacingOccurrences(of: ".", with: "")
             .replacingOccurrences(of: ",", with: "")
             .replacingOccurrences(of: "___", with: "")
             .split(separator: " ")
+            .map{ "\($0)" }
     }
 }
