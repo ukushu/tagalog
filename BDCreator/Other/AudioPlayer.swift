@@ -6,23 +6,17 @@ import AppCore
 
 struct AudioPlayerView: View {
     let audioUrl: String?
-    @State var isPlaying = false
     
     private let model: AudioModel = AudioModel()
     
     var body: some View {
         if let audioUrl = audioUrl {
-            Text.sfSymbol(isPlaying ? "pause.fill" : "speaker.wave.2")
+            Text.sfSymbol("speaker.wave.2")
                 .frame(width: 25)
                 .onTapGesture {
                     model.playSound(url: audioUrl)
-                    isPlaying.toggle()
                     
-                    if isPlaying {
-                        model.audioPlayer?.play()
-                    } else {
-                        model.audioPlayer?.pause()
-                    }
+                    model.audioPlayer?.play()
                 }
         } else {
             Space(25, .h)
@@ -48,31 +42,37 @@ fileprivate class AudioModel {
 fileprivate func downloadMp3(from url: String) -> URL {
     let audioUrl = URL(string: url)!
     
-    // then lets create your document folder url
-    let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    let folderURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("BDCreator")
     
-    // lets create your destination file url
-    let destinationUrl = documentsDirectoryURL.appendingPathComponent(audioUrl.lastPathComponent)
+    folderURL.FS.makeSureDirExist()
     
-    print(destinationUrl)
+    let destinationUrl = folderURL.appendingPathComponent(audioUrl.lastPathComponent)
     
-    // to check if it exists before downloading it
-    if FileManager.default.fileExists(atPath: destinationUrl.path) {
-        print("The file already exists at path")
-    } else {
+    
+    guard !FileManager.default.fileExists(atPath: destinationUrl.path) else { return destinationUrl }
+    
+    let config = URLSessionConfiguration.default
+    config.httpAdditionalHeaders = [ "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" ]
+    
+    let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+    
+    let semaphore = DispatchSemaphore(value: 1)
+    
+    // you can use NSURLSession.sharedSession to download the data asynchronously
+    session.downloadTask(with: audioUrl) { location, response, error in
+        guard let location = location, error == nil else { return }
+        do {
+            // after downloading your file you need to move it to your destination url
+            try FileManager.default.moveItem(at: location, to: destinationUrl)
+            print("File moved to documents folder")
+        } catch {
+            print(error)
+        }
         
-        // you can use NSURLSession.sharedSession to download the data asynchronously
-        URLSession.shared.downloadTask(with: audioUrl) { location, response, error in
-            guard let location = location, error == nil else { return }
-            do {
-                // after downloading your file you need to move it to your destination url
-                try FileManager.default.moveItem(at: location, to: destinationUrl)
-                print("File moved to documents folder")
-            } catch {
-                print(error)
-            }
-        }.resume()
-    }
+        semaphore.signal()
+    }.resume()
+    
+    semaphore.wait()
     
     return destinationUrl
 }

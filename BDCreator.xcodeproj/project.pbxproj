@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		1D3A86102A88A2680081857F /* PhraseDisplayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDisplayerView.swift; sourceTree = "<group>"; };
 		1D3A86152A89C6760081857F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		1D3A86182A89D0FB0081857F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCDC2A85258600BF2816 /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinjaReactiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +143,7 @@
 		1DE02B332A851D00007179D7 /* BDCreator */ = {
 			isa = PBXGroup;
 			children = (
+				1D3A86182A89D0FB0081857F /* Info.plist */,
 				1D3A86142A89C6620081857F /* Other */,
 				1D6908302A85DB4800FAE305 /* SwiftUI_Custom */,
 				1DE02B342A851D00007179D7 /* BDCreatorApp.swift */,
@@ -404,6 +406,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BDCreator/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,6 +436,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BDCreator/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

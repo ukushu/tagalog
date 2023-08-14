@@ -45,14 +45,25 @@ extension MainView {
                             model.modify(obj: obj)
                         }
                         
+                        Button("Finder: local Audio") {
+                            guard let url = obj.audioUrl,
+                                  let audioUrl = URL(string: url),
+                                  let folderURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("BDCreator")
+                            else { return }
+                            
+                            folderURL.FS.makeSureDirExist()
+                            
+                            let destinationUrl = folderURL.appendingPathComponent(audioUrl.lastPathComponent)
+                            
+                            destinationUrl.FS.showInFinder()
+                        }
+                        
                         Divider()
                         
                         Button("Delete") {
                             model.delete(translation: obj)
                         }
                     }
-                    
-                    
 //                    .onTapGesture {
 //                        model.selection = [obj]
 //                    }
