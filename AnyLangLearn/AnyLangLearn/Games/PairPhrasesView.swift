@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import Essentials
 
 struct PairPhrasesView: View {
     @State var selected: [Pair] = []

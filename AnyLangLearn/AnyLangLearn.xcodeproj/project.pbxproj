@@ -20,6 +20,8 @@
 		1D3A860A2A888A940081857F /* PairPhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86092A888A940081857F /* PairPhrasesView.swift */; };
 		1D3A860D2A888D6F0081857F /* AllPhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A860C2A888D6F0081857F /* AllPhrasesView.swift */; };
 		1D3A860F2A888FD90081857F /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A860E2A888FD90081857F /* TODO.swift */; };
+		1D980CC82A8AB1150098EF77 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CC72A8AB1150098EF77 /* Essentials */; };
+		1D980CC92A8AB1150098EF77 /* Essentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CC72A8AB1150098EF77 /* Essentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +32,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1D3A86042A887AED0081857F /* AsyncNinjaReactiveUI.framework in Embed Frameworks */,
+				1D980CC92A8AB1150098EF77 /* Essentials in Embed Frameworks */,
 				1D3A86012A887ADD0081857F /* AsyncNinja.framework in Embed Frameworks */,
 				1D3A85FD2A887AA00081857F /* AppCore.framework in Embed Frameworks */,
 			);
@@ -59,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3A86032A887AED0081857F /* AsyncNinjaReactiveUI.framework in Frameworks */,
+				1D980CC82A8AB1150098EF77 /* Essentials in Frameworks */,
 				1D3A86002A887ADD0081857F /* AsyncNinja.framework in Frameworks */,
 				1D3A85FC2A887AA00081857F /* AppCore.framework in Frameworks */,
 			);
@@ -143,6 +147,7 @@
 			);
 			name = AnyLangLearn;
 			packageProductDependencies = (
+				1D980CC72A8AB1150098EF77 /* Essentials */,
 			);
 			productName = AnyLangLearn;
 			productReference = 1D3A85E82A886E160081857F /* AnyLangLearn.app */;
@@ -412,6 +417,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D980CC72A8AB1150098EF77 /* Essentials */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D980CAE2A8A94F40098EF77 /* XCRemoteSwiftPackageReference "essentials" */;
+			productName = Essentials;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D3A85E02A886E160081857F /* Project object */;
 }
