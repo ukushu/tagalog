@@ -6,7 +6,8 @@ struct MainView: View {
         VStack {
 //            FilterPanel()
             
-            Game0View()
+//            LearnPhrasesView()
+            PairPhrasesView()
         }
     }
 }

@@ -91,6 +91,6 @@ extension UniDictObj {
             .replacingOccurrences(of: ",", with: "")
             .replacingOccurrences(of: "___", with: "")
             .split(separator: " ")
-            .map{ "\($0)" }
+            .map{ "\($0)".capitalizingFirstLetter() }
     }
 }
