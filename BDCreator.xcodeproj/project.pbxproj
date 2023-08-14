@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D3A86112A88A2680081857F /* PhraseDisplayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86102A88A2680081857F /* PhraseDisplayerView.swift */; };
 		1D3A86162A89C6760081857F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86152A89C6760081857F /* AudioPlayer.swift */; };
-		1D3A86B52A89E2220081857F /* AnyLangLearnCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A86B42A89E2220081857F /* AnyLangLearnCore.framework */; };
-		1D3A86B62A89E2220081857F /* AnyLangLearnCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A86B42A89E2220081857F /* AnyLangLearnCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D3CFCDA2A85242200BF2816 /* AsyncNinja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */; };
 		1D3CFCDB2A85242200BF2816 /* AsyncNinja.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D3CFCDD2A85258600BF2816 /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCDC2A85258600BF2816 /* AppCore.framework */; };
@@ -41,7 +39,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1D3CFCE22A85264300BF2816 /* Essentials in Embed Frameworks */,
-				1D3A86B62A89E2220081857F /* AnyLangLearnCore.framework in Embed Frameworks */,
 				1D3CFCE52A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Embed Frameworks */,
 				1D3CFCDB2A85242200BF2816 /* AsyncNinja.framework in Embed Frameworks */,
 				1D3CFCDE2A85258600BF2816 /* AppCore.framework in Embed Frameworks */,
@@ -55,7 +52,6 @@
 		1D3A86102A88A2680081857F /* PhraseDisplayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDisplayerView.swift; sourceTree = "<group>"; };
 		1D3A86152A89C6760081857F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		1D3A86182A89D0FB0081857F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		1D3A86B42A89E2220081857F /* AnyLangLearnCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnyLangLearnCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCDC2A85258600BF2816 /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinjaReactiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3CFCE12A85262000BF2816 /* Essentials in Frameworks */,
-				1D3A86B52A89E2220081857F /* AnyLangLearnCore.framework in Frameworks */,
 				1D3CFCE42A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Frameworks */,
 				1D3CFCDA2A85242200BF2816 /* AsyncNinja.framework in Frameworks */,
 				1D3CFCDD2A85258600BF2816 /* AppCore.framework in Frameworks */,
@@ -102,7 +97,6 @@
 		1D3CFCD82A85242200BF2816 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D3A86B42A89E2220081857F /* AnyLangLearnCore.framework */,
 				1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */,
 				1D3CFCDC2A85258600BF2816 /* AppCore.framework */,
 				1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */,

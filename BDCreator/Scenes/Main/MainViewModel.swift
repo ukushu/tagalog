@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 import AppCore
 import AsyncNinja
-import AnyLangLearnCore
 
 class MainViewModel: NinjaContext.Main, ObservableObject {
     static let shared = MainViewModel()

@@ -8,9 +8,6 @@
       location = "group:AppCore/AppCore.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:AnyLangLearnCore/AnyLangLearnCore.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:AnyLangLearn/AnyLangLearn.xcodeproj">
    </FileRef>
    <FileRef
