@@ -4,3 +4,6 @@
 [submodule "AsyncNinja"]
 	path = AsyncNinja
 	url = git@github.com:serg-vinnie/AsyncNinja.git
+[submodule "moreswiftui"]
+	path = moreswiftui
+	url = git@gitlab.com:UKS/moreswiftui.git

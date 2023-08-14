@@ -1,6 +1,8 @@
 import Foundation
 import SwiftUI
 import AppCore
+import MoreSwiftUI
+import LangLearnCore
 
 struct PhraseDisplayerView: View {
     let model: UniDictObj
@@ -23,10 +25,10 @@ struct PhraseDisplayerView: View {
     
     var body: some View {
         VStack {
-            VStack{
+            VStack {
                 HStack {
                     Text(model.eng)
-                    Space()
+                    Spacer()
                 }
             }
             .padding()
@@ -41,7 +43,7 @@ struct PhraseDisplayerView: View {
                             obj.isWord = true
                             obj.translation = phrase
                             
-                            let dlg = SheetDialogType.view(view: AnyView(AddTranslationView(createFrom: obj)))
+                            let dlg = MoreSwiftUI.SheetDialogType.view(view: AnyView(AddTranslationView(createFrom: obj)))
                             
                             GlobalDialog.Open(view: dlg)
                         }

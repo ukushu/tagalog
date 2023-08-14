@@ -2,10 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:moreswiftui">
+   </FileRef>
+   <FileRef
       location = "group:AsyncNinja/AsyncNinja.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:AppCore/AppCore.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LangLearnCore/LangLearnCore.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:AnyLangLearn/AnyLangLearn.xcodeproj">

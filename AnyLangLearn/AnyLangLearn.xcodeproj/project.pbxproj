@@ -17,8 +17,6 @@
 		1D3A86012A887ADD0081857F /* AsyncNinja.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A85FF2A887ADD0081857F /* AsyncNinja.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D3A86032A887AED0081857F /* AsyncNinjaReactiveUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A86022A887AED0081857F /* AsyncNinjaReactiveUI.framework */; };
 		1D3A86042A887AED0081857F /* AsyncNinjaReactiveUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A86022A887AED0081857F /* AsyncNinjaReactiveUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1D3A86072A887B210081857F /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D3A86062A887B210081857F /* Essentials */; };
-		1D3A86082A887B9F0081857F /* Essentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1D3A86062A887B210081857F /* Essentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1D3A860A2A888A940081857F /* PairPhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86092A888A940081857F /* PairPhrasesView.swift */; };
 		1D3A860D2A888D6F0081857F /* AllPhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A860C2A888D6F0081857F /* AllPhrasesView.swift */; };
 		1D3A860F2A888FD90081857F /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A860E2A888FD90081857F /* TODO.swift */; };
@@ -32,7 +30,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1D3A86042A887AED0081857F /* AsyncNinjaReactiveUI.framework in Embed Frameworks */,
-				1D3A86082A887B9F0081857F /* Essentials in Embed Frameworks */,
 				1D3A86012A887ADD0081857F /* AsyncNinja.framework in Embed Frameworks */,
 				1D3A85FD2A887AA00081857F /* AppCore.framework in Embed Frameworks */,
 			);
@@ -62,7 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3A86032A887AED0081857F /* AsyncNinjaReactiveUI.framework in Frameworks */,
-				1D3A86072A887B210081857F /* Essentials in Frameworks */,
 				1D3A86002A887ADD0081857F /* AsyncNinja.framework in Frameworks */,
 				1D3A85FC2A887AA00081857F /* AppCore.framework in Frameworks */,
 			);
@@ -147,7 +143,6 @@
 			);
 			name = AnyLangLearn;
 			packageProductDependencies = (
-				1D3A86062A887B210081857F /* Essentials */,
 			);
 			productName = AnyLangLearn;
 			productReference = 1D3A85E82A886E160081857F /* AnyLangLearn.app */;
@@ -178,7 +173,7 @@
 			);
 			mainGroup = 1D3A85DF2A886E160081857F;
 			packageReferences = (
-				1D3A86052A887B210081857F /* XCRemoteSwiftPackageReference "essentials" */,
+				1D980CAE2A8A94F40098EF77 /* XCRemoteSwiftPackageReference "essentials" */,
 			);
 			productRefGroup = 1D3A85E92A886E160081857F /* Products */;
 			projectDirPath = "";
@@ -408,23 +403,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1D3A86052A887B210081857F /* XCRemoteSwiftPackageReference "essentials" */ = {
+		1D980CAE2A8A94F40098EF77 /* XCRemoteSwiftPackageReference "essentials" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@gitlab.com:sergiy.vynnychenko/essentials.git";
+			repositoryURL = "https://gitlab.com/sergiy.vynnychenko/essentials.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1D3A86062A887B210081857F /* Essentials */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D3A86052A887B210081857F /* XCRemoteSwiftPackageReference "essentials" */;
-			productName = Essentials;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D3A85E02A886E160081857F /* Project object */;
 }

@@ -1,8 +1,10 @@
 import Foundation
 import SwiftUI
+import LangLearnCore
+import Essentials
 
-struct AddTranslationView: View {
-    @State var transSelection = Language.Tagalog
+public struct AddTranslationView: View {
+    @State public var transSelection = LLLanguage.Tagalog
     
     @State var eng: String = ""
     @State var translation: String = ""
@@ -18,12 +20,12 @@ struct AddTranslationView: View {
     fileprivate let viewType: ViewType
     let id: String
     
-    init() {
+    public init() {
         viewType = .add
         id = ""
     }
     
-    init(obj: UniDictObj) {
+    public init(obj: UniDictObj) {
         self.audioUrl = obj.audioUrl ?? ""
         self.lessonNum = obj.lessonNum.map{ "\($0)" } ?? ""
         self.isWord = obj.isWord
@@ -34,7 +36,7 @@ struct AddTranslationView: View {
         self.id = obj.id
     }
     
-    init(createFrom obj: UniDictObj) {
+    public init(createFrom obj: UniDictObj) {
         self.audioUrl = obj.audioUrl ?? ""
         self.lessonNum = obj.lessonNum.map{ "\($0)" } ?? ""
         self.isWord = obj.isWord
@@ -45,7 +47,7 @@ struct AddTranslationView: View {
         self.id = obj.id
     }
     
-    var body: some View {
+    public var body: some View {
         VStack {
             LanguageSelector(text: "Language to: ", sel: $transSelection)
             

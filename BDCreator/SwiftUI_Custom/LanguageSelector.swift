@@ -1,23 +1,18 @@
 import Foundation
 import SwiftUI
-
-enum Language: String, CaseIterable ,RawRepresentable {
-    case English
-    case Tagalog
-    case Ukrainian
-}
+import LangLearnCore
 
 struct LanguageSelector: View {
     let text: LocalizedStringKey
     
     let translations = {
-        var trans = Language.allCases
+        var trans = LLLanguage.allCases
         trans.remove(at: 0)
         
         return trans
     }()
     
-    @Binding var sel: Language
+    @Binding var sel: LLLanguage
     
     var body: some View {
         Picker(text, selection: $sel) {

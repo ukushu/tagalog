@@ -2,11 +2,15 @@ import Foundation
 import SwiftUI
 import AppCore
 import AsyncNinja
+import LangLearnCore
+import MoreSwiftUI
+import RealmSwift
+import AppCore
 
 class MainViewModel: NinjaContext.Main, ObservableObject {
     static let shared = MainViewModel()
     
-    @Published var dialog : SheetDialogType = .none
+    @Published var dialog : MoreSwiftUI.SheetDialogType = .none
     
     private let realmWrap = RealmWrapper()
     @Published var translations: [UniDictObj] = []
@@ -14,7 +18,7 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
     
     @Published var selection: Set<UniDictObj> = []
     
-    @Published var filterLanguage: Language = .Tagalog
+    @Published var filterLanguage: LLLanguage = .Tagalog
     @Published var filterLessonNum: Int = 1
     @Published var filterHideWords = false
     
@@ -53,7 +57,12 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
         translations.removeFirst(where: { $0.id == obj.id })
         
         DispatchQueue.main.async {
-            self.realmWrap.delete(translation: obj)
+            self.realmWrap
+                .delete(translation: obj)
+                .onFailure { e in
+                    let dlg = MoreSwiftUI.SheetDialogType.view(view: AnyView( ErrorView(error: e)))
+                    GlobalDialog.Open(view: dlg)
+                }
         }
     }
 }

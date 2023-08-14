@@ -1,5 +1,7 @@
 import SwiftUI
 import AppCore
+import LangLearnCore
+import MoreSwiftUI
 
 struct MainView: View {
     @ObservedObject var model = MainViewModel.shared
@@ -39,7 +41,7 @@ extension MainView {
                         
                         Text("\(obj.translation)")
                     }
-                    .makeFullyIntaractable()
+//                    .makeFullyIntaractable()
                     .contextMenu {
                         Button("Edit") {
                             model.modify(obj: obj)
@@ -99,10 +101,10 @@ extension MainView {
             
             Toggle("Hide words", isOn: $model.filterHideWords)
             
-            Space()
+            Spacer()
             
             Button("+") {
-                let dlg = SheetDialogType.view(view: AnyView(AddTranslationView()))
+                let dlg = MoreSwiftUI.SheetDialogType.view(view: AnyView(AddTranslationView()))
                 
                 GlobalDialog.Open(view: dlg)
             }
@@ -120,7 +122,7 @@ extension MainView {
 
 fileprivate extension MainViewModel {
     func modify(obj: UniDictObj) {
-        let dlg = SheetDialogType.view(view: AnyView(AddTranslationView(obj: obj) ))
+        let dlg = MoreSwiftUI.SheetDialogType.view(view: AnyView(AddTranslationView(obj: obj) ))
         
         GlobalDialog.Open(view: dlg)
     }

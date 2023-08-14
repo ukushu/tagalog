@@ -1,9 +1,9 @@
 import Foundation
-import AppCore
+import MoreSwiftUI
 
 struct Signal {
     struct OpenDialog {
-        let dlg: SheetDialogType
+        let dlg: MoreSwiftUI.SheetDialogType
     }
     
     struct CloseDialog { }

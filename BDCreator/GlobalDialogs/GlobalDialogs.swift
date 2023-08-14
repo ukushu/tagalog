@@ -1,9 +1,10 @@
 import Foundation
-import AppCore
+import MoreSwiftUI
 import AsyncNinja
+import AppCore
 
 public class GlobalDialog {
-    public static func Open(view: SheetDialogType) {
+    public static func Open(view: MoreSwiftUI.SheetDialogType) {
         AppCore.signals
             .send( signal: Signal.OpenDialog(dlg: view) )
     }
