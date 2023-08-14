@@ -35,6 +35,17 @@ struct PhraseDisplayerView: View {
             List (phrases, id: \.self, selection: $selection) { phrase in
                 Text(phrase)
                     .fixedSize()
+                    .contextMenu {
+                        Button("Add this word") {
+                            let obj = UniDictObj()
+                            obj.isWord = true
+                            obj.translation = phrase
+                            
+                            let dlg = SheetDialogType.view(view: AnyView(AddTranslationView(createFrom: obj)))
+                            
+                            GlobalDialog.Open(view: dlg)
+                        }
+                    }
             }
             .frame(minWidth: 170)
         }

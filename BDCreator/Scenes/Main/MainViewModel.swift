@@ -16,6 +16,7 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
     
     @Published var filterLanguage: Language = .Tagalog
     @Published var filterLessonNum: Int = 1
+    @Published var filterHideWords = false
     
     private override init() {
         print("MainViewModel init")

@@ -34,6 +34,17 @@ struct AddTranslationView: View {
         self.id = obj.id
     }
     
+    init(createFrom obj: UniDictObj) {
+        self.audioUrl = obj.audioUrl ?? ""
+        self.lessonNum = obj.lessonNum.map{ "\($0)" } ?? ""
+        self.isWord = obj.isWord
+        self.isPhrase = obj.isPhrase
+        self.eng = obj.eng
+        self.translation = obj.translation
+        viewType = .createFrom
+        self.id = obj.id
+    }
+    
     var body: some View {
         VStack {
             LanguageSelector(text: "Language to: ", sel: $transSelection)
@@ -92,18 +103,21 @@ struct AddTranslationView: View {
                     
                     let obj = UniDictObj()
                     obj.langTo = transSelection.rawValue
-                    obj.eng = eng
-                    obj.translation = translation
+                    obj.eng = eng.capitalizingFirstLetter()
+                    obj.translation = translation.capitalizingFirstLetter()
                     if isPhrase {
                         obj.lessonNum = lessonNum.count == 0 ? nil : Int(lessonNum)
                     }
                     obj.audioUrl = audioUrl.count == 0 ? nil : audioUrl
                     obj.isWord = isWord
                     obj.isPhrase = isPhrase
-                        
-                    if viewType == .add {
+                    
+                    switch viewType {
+                    case .createFrom:
+                        fallthrough
+                    case .add:
                         RealmWrapper.shared.addTranslation(obj: obj)
-                    } else {
+                    case .modify:
                         RealmWrapper.shared.modify(key: id, withValues: obj)
                     }
                     
@@ -149,6 +163,7 @@ private extension AddTranslationView {
     enum ViewType: String {
         case add = "Add"
         case modify = "Modify"
+        case createFrom = "Add word"
     }
     
     func focusPreviousField() {

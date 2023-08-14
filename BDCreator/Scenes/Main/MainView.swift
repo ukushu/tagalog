@@ -10,7 +10,7 @@ struct MainView: View {
                 CurrentBdList()
                     .tabItem { Label("BD list", systemImage: "list.dash") }
                 
-                IssuesView()
+                DetailsView()
                     .tabItem { Label("Issues", systemImage: "list.dash") }
             }
         }
@@ -34,7 +34,7 @@ extension MainView {
                         Text("\(obj.translation)")
                     }
                     .makeFullyIntaractable()
-                    .contextMenu{
+                    .contextMenu {
                         Button("Edit") {
                             model.modify(obj: obj)
                         }
@@ -60,37 +60,42 @@ extension MainView {
                 }
             }
             
-            HStack {
-                Text("Filters: ")
-                
-                LanguageSelector(text: "To lang:", sel: $model.filterLanguage)
-                    .frame(maxWidth: 150)
-                
-                Picker("Lesson:", selection: $model.filterLessonNum) {
-                    ForEach(model.allLessonsNumbers, id: \.self) {
-                        Text("\($0)")
-                    }
+            FiltersPanel()
+        }
+    }
+    
+    func FiltersPanel() -> some View {
+        HStack {
+            Text("Filters: ")
+            
+            LanguageSelector(text: "To lang:", sel: $model.filterLanguage)
+                .frame(maxWidth: 150)
+            
+            Picker("Lesson:", selection: $model.filterLessonNum) {
+                ForEach(model.allLessonsNumbers, id: \.self) {
+                    Text("\($0)")
                 }
-                .pickerStyle(.menu)
-                .frame(maxWidth: 100)
-                
-                
-                Space()
-                
-                Button("+") {
-                    let dlg = SheetDialogType.view(view: AnyView(AddTranslationView()))
-                    
-                    GlobalDialog.Open(view: dlg)
-                }
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 5) )
             }
+            .pickerStyle(.menu)
+            .frame(maxWidth: 100)
+            
+            Toggle("Hide words", isOn: $model.filterHideWords)
+            
+            Space()
+            
+            Button("+") {
+                let dlg = SheetDialogType.view(view: AnyView(AddTranslationView()))
+                
+                GlobalDialog.Open(view: dlg)
+            }
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 5) )
         }
     }
 }
 
 // Issues
 extension MainView {
-    func IssuesView() -> some View {
+    func DetailsView() -> some View {
         Text("Issues")
     }
 }
