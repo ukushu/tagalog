@@ -12,14 +12,14 @@ struct AudioPlayerView: View {
     var body: some View {
         if let audioUrl = audioUrl {
             Text.sfSymbol("speaker.wave.2")
-                .frame(width: 25)
+                //.frame(width: 35)
                 .onTapGesture {
                     model.playSound(url: audioUrl)
                     
                     model.audioPlayer?.play()
                 }
         } else {
-            Space(25, .h)
+            Space(34, .h)
         }
     }
 }
@@ -42,12 +42,7 @@ fileprivate class AudioModel {
 fileprivate func downloadMp3(from url: String) -> URL {
     let audioUrl = URL(string: url)!
     
-    let folderURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("BDCreator")
-    
-    folderURL.FS.makeSureDirExist()
-    
-    let destinationUrl = folderURL.appendingPathComponent(audioUrl.lastPathComponent)
-    
+    let destinationUrl = URL.BDCreateHome.appendingPathComponent(audioUrl.lastPathComponent)
     
     guard !FileManager.default.fileExists(atPath: destinationUrl.path) else { return destinationUrl }
     

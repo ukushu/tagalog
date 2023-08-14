@@ -47,15 +47,16 @@ extension MainView {
                         
                         Button("Finder: local Audio") {
                             guard let url = obj.audioUrl,
-                                  let audioUrl = URL(string: url),
-                                  let folderURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("BDCreator")
+                                  let audioUrl = URL(string: url)
                             else { return }
                             
-                            folderURL.FS.makeSureDirExist()
-                            
-                            let destinationUrl = folderURL.appendingPathComponent(audioUrl.lastPathComponent)
+                            let destinationUrl = URL.BDCreateHome.appendingPathComponent(audioUrl.lastPathComponent)
                             
                             destinationUrl.FS.showInFinder()
+                        }
+                        
+                        Button("Clean Audio Cache") {
+                            _ = URL.BDCreateHome.FS.delete()
                         }
                         
                         Divider()
@@ -122,5 +123,15 @@ fileprivate extension MainViewModel {
         let dlg = SheetDialogType.view(view: AnyView(AddTranslationView(obj: obj) ))
         
         GlobalDialog.Open(view: dlg)
+    }
+}
+
+extension URL {
+    static var BDCreateHome: URL {
+        let folderURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("BDCreator")
+        
+        folderURL.FS.makeSureDirExist()
+        
+        return folderURL
     }
 }

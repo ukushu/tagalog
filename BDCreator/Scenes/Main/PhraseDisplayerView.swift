@@ -51,8 +51,3 @@ struct PhraseDisplayerView: View {
         }
     }
 }
-
-//class PhraseDisplayerViewModel: ObservableObject {
-//
-//}
-
