@@ -29,11 +29,13 @@ extension MainView {
                         Text("\(obj.lessonNum?.description ?? "_" )  ")
                         Text("\(obj.langTo)")
                         
-                        if obj.audioUrl == nil {
-                            Space(35)
-                        } else {
-                            Text.sfSymbol("speaker.wave.2")
-                        }
+                        AudioPlayerView(audioUrl: obj.audioUrl)
+                        
+//                        if obj.audioUrl == nil {
+//                            Space(35, .h)
+//                        } else {
+//                            Text.sfSymbol("speaker.wave.2")
+//                        }
                         
                         Text("\(obj.translation)")
                     }
@@ -111,4 +113,3 @@ fileprivate extension MainViewModel {
         GlobalDialog.Open(view: dlg)
     }
 }
-
