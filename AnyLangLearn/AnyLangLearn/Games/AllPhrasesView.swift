@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import AppCore
 
-struct             PairPhrasesView: View {
+struct AllPhrasesView: View {
     let origs: [String] = ["a1","b1","c1","d","5","6"]
     
     @State var selection: Set<String> = []
