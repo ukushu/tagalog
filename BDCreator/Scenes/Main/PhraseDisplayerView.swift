@@ -47,7 +47,7 @@ struct PhraseDisplayerView: View {
                         }
                     }
             }
-            .frame(minWidth: 170)
+            .frame(minWidth: 300)
         }
     }
 }

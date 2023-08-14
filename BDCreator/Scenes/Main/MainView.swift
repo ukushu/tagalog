@@ -26,11 +26,15 @@ extension MainView {
             HSplitView {
                 List (model.translations, id: \.self, selection: $model.selection) { obj in
                     HStack(alignment: .center) {
-                        Text("\(obj.lessonNum?.description ?? "_" ) | ")
-                        Text("\(obj.langTo) | ")
+                        Text("\(obj.lessonNum?.description ?? "_" )  ")
+                        Text("\(obj.langTo)")
                         
-                        Text("\(obj.eng )")
-                        Text(" => ")
+                        if obj.audioUrl == nil {
+                            Space(35)
+                        } else {
+                            Text.sfSymbol("speaker.wave.2")
+                        }
+                        
                         Text("\(obj.translation)")
                     }
                     .makeFullyIntaractable()
