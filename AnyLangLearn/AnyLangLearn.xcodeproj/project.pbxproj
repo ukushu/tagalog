@@ -21,7 +21,6 @@
 		1D3A860A2A888A940081857F /* PairPhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86092A888A940081857F /* PairPhrasesView.swift */; };
 		1D3A860D2A888D6F0081857F /* AllPhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A860C2A888D6F0081857F /* AllPhrasesView.swift */; };
 		1D3A860F2A888FD90081857F /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A860E2A888FD90081857F /* TODO.swift */; };
-		1D8FAA962A981F1800A06483 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8FAA952A981F1800A06483 /* Realm */; };
 		1D980CC82A8AB1150098EF77 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CC72A8AB1150098EF77 /* Essentials */; };
 		1D980CC92A8AB1150098EF77 /* Essentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CC72A8AB1150098EF77 /* Essentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -67,7 +66,6 @@
 				1D980CC82A8AB1150098EF77 /* Essentials in Frameworks */,
 				1D3A86002A887ADD0081857F /* AsyncNinja.framework in Frameworks */,
 				1D3A85FC2A887AA00081857F /* AppCore.framework in Frameworks */,
-				1D8FAA962A981F1800A06483 /* Realm in Frameworks */,
 				1D1524832A983D500063EA6D /* MoreSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +150,6 @@
 			name = AnyLangLearn;
 			packageProductDependencies = (
 				1D980CC72A8AB1150098EF77 /* Essentials */,
-				1D8FAA952A981F1800A06483 /* Realm */,
 				1D1524822A983D500063EA6D /* MoreSwiftUI */,
 			);
 			productName = AnyLangLearn;
@@ -439,11 +436,6 @@
 		1D1524822A983D500063EA6D /* MoreSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MoreSwiftUI;
-		};
-		1D8FAA952A981F1800A06483 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D8FAA942A981F1800A06483 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
 		};
 		1D980CC72A8AB1150098EF77 /* Essentials */ = {
 			isa = XCSwiftPackageProductDependency;

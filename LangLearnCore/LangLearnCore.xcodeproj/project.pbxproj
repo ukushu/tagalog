@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D1524852A983E3B0063EA6D /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D1524842A983E3B0063EA6D /* Essentials */; };
+		1D15248E2A9845620063EA6D /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D15248D2A9845620063EA6D /* AppCore.framework */; };
+		1D15248F2A9845620063EA6D /* AppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D15248D2A9845620063EA6D /* AppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D980CAB2A8A933A0098EF77 /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CAA2A8A933A0098EF77 /* MoreSwiftUI */; };
 		1D980CB22A8A968D0098EF77 /* RealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D980CB12A8A968D0098EF77 /* RealmWrapper.swift */; };
-		1D980CB52A8A99120098EF77 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CB42A8A99120098EF77 /* Realm */; };
-		1D980CB72A8A99120098EF77 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CB62A8A99120098EF77 /* RealmSwift */; };
 		1D980CB92A8A99950098EF77 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D980CB82A8A99950098EF77 /* Language.swift */; };
 		1D980CBE2A8A9B220098EF77 /* UniDictObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D980CBD2A8A9B220098EF77 /* UniDictObj.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1D15248F2A9845620063EA6D /* AppCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D15248D2A9845620063EA6D /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D980C9F2A8A92880098EF77 /* LangLearnCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LangLearnCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D980CB12A8A968D0098EF77 /* RealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWrapper.swift; sourceTree = "<group>"; };
 		1D980CB82A8A99950098EF77 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
@@ -41,10 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D980CB72A8A99120098EF77 /* RealmSwift in Frameworks */,
 				1D1524852A983E3B0063EA6D /* Essentials in Frameworks */,
-				1D980CB52A8A99120098EF77 /* Realm in Frameworks */,
 				1D980CAB2A8A933A0098EF77 /* MoreSwiftUI in Frameworks */,
+				1D15248E2A9845620063EA6D /* AppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +82,7 @@
 		1D980CA92A8A933A0098EF77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D15248D2A9845620063EA6D /* AppCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,8 +125,6 @@
 			name = LangLearnCore;
 			packageProductDependencies = (
 				1D980CAA2A8A933A0098EF77 /* MoreSwiftUI */,
-				1D980CB42A8A99120098EF77 /* Realm */,
-				1D980CB62A8A99120098EF77 /* RealmSwift */,
 				1D1524842A983E3B0063EA6D /* Essentials */,
 			);
 			productName = LangLearnCore;
@@ -431,16 +431,6 @@
 		1D980CAA2A8A933A0098EF77 /* MoreSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MoreSwiftUI;
-		};
-		1D980CB42A8A99120098EF77 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D980CB32A8A99120098EF77 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		1D980CB62A8A99120098EF77 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D980CB32A8A99120098EF77 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

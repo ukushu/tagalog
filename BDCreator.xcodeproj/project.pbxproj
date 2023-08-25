@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D1524812A98367E0063EA6D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D1524802A98367E0063EA6D /* RealmSwift */; };
 		1D1524892A983F970063EA6D /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D1524882A983F970063EA6D /* MoreSwiftUI */; };
 		1D3A86112A88A2680081857F /* PhraseDisplayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86102A88A2680081857F /* PhraseDisplayerView.swift */; };
 		1D3A86162A89C6760081857F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86152A89C6760081857F /* AudioPlayer.swift */; };
@@ -81,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1524812A98367E0063EA6D /* RealmSwift in Frameworks */,
 				1D8FAAA52A982EBD00A06483 /* LangLearnCore.framework in Frameworks */,
 				1D3CFCE42A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Frameworks */,
 				1D3CFCDA2A85242200BF2816 /* AsyncNinja.framework in Frameworks */,
@@ -212,7 +210,6 @@
 			name = BDCreator;
 			packageProductDependencies = (
 				1D8FAAA32A982EA300A06483 /* Essentials */,
-				1D1524802A98367E0063EA6D /* RealmSwift */,
 				1D1524882A983F970063EA6D /* MoreSwiftUI */,
 			);
 			productName = BDCreator;
@@ -245,7 +242,6 @@
 			mainGroup = 1DE02B282A851D00007179D7;
 			packageReferences = (
 				1D8FAAA22A982EA300A06483 /* XCRemoteSwiftPackageReference "essentials" */,
-				1D15247F2A98367E0063EA6D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 1DE02B322A851D00007179D7 /* Products */;
 			projectDirPath = "";
@@ -487,14 +483,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1D15247F2A98367E0063EA6D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = v10.42.0;
-				kind = branch;
-			};
-		};
 		1D8FAAA22A982EA300A06483 /* XCRemoteSwiftPackageReference "essentials" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.com/sergiy.vynnychenko/essentials.git";
@@ -506,11 +494,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D1524802A98367E0063EA6D /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D15247F2A98367E0063EA6D /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
 		1D1524882A983F970063EA6D /* MoreSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MoreSwiftUI;

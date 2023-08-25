@@ -4,7 +4,6 @@ import AppCore
 import AsyncNinja
 import LangLearnCore
 import MoreSwiftUI
-import RealmSwift
 import AppCore
 
 class MainViewModel: NinjaContext.Main, ObservableObject {
