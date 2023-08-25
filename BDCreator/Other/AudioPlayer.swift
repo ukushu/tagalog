@@ -4,6 +4,7 @@ import AVFAudio
 import SwiftUI
 import AppCore
 import Essentials
+import MoreSwiftUI
 
 struct AudioPlayerView: View {
     let audioUrl: String?

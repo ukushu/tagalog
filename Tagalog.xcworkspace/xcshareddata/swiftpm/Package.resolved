@@ -3,7 +3,7 @@
     {
       "identity" : "essentials",
       "kind" : "remoteSourceControl",
-      "location" : "https://gitlab.com/sergiy.vynnychenko/essentials.git",
+      "location" : "git@gitlab.com:sergiy.vynnychenko/essentials.git",
       "state" : {
         "branch" : "master",
         "revision" : "359f92c08c0a5cd992f5e8d50406e6a434193e68"
