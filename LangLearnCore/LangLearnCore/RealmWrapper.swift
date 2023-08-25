@@ -14,7 +14,11 @@ public class RealmWrapper {
     public var allLesssonsNums: [Int] { realm.objects(UniDictObj.self).distinct(by: ["lessonNum"]).compactMap{ $0.lessonNum }.sorted() }
     
     public init() {
-        let config = Realm.Configuration(encryptionKey: nil, schemaVersion: 4)
+        
+        let objectTypes = [UniDictObj.self]
+        
+        let config = Realm.Configuration(encryptionKey: nil, schemaVersion: 4, objectTypes: objectTypes)
+        
         
         self.realm = try! Realm(configuration: config)
         

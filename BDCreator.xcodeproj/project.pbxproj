@@ -17,10 +17,13 @@
 		1D3CFCE52A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D6908322A85DB5A00FAE305 /* LanguageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6908312A85DB5A00FAE305 /* LanguageSelector.swift */; };
 		1D6908342A85DC5D00FAE305 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6908332A85DC5D00FAE305 /* DropDown.swift */; };
-		1D980CBB2A8A99C80098EF77 /* LangLearnCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D980CBA2A8A99C80098EF77 /* LangLearnCore.framework */; };
-		1D980CBC2A8A99C80098EF77 /* LangLearnCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D980CBA2A8A99C80098EF77 /* LangLearnCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1D980CC42A8AA4160098EF77 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CC32A8AA4160098EF77 /* Realm */; };
-		1D980CC62A8AA4160098EF77 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CC52A8AA4160098EF77 /* RealmSwift */; };
+		1D8FAAA02A982DD300A06483 /* AnyLangLearn.app in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FAA9F2A982DD300A06483 /* AnyLangLearn.app */; };
+		1D8FAAA42A982EA300A06483 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8FAAA32A982EA300A06483 /* Essentials */; };
+		1D8FAAA52A982EBD00A06483 /* LangLearnCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D980CBA2A8A99C80098EF77 /* LangLearnCore.framework */; };
+		1D8FAAA62A982EBD00A06483 /* LangLearnCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D980CBA2A8A99C80098EF77 /* LangLearnCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D8FAAA72A982ECE00A06483 /* Essentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1D8FAAA32A982EA300A06483 /* Essentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1D8FAAA82A98318300A06483 /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCDC2A85258600BF2816 /* AppCore.framework */; };
+		1D8FAAAB2A98327700A06483 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8FAAAA2A98327700A06483 /* RealmSwift */; };
 		1DA3CB5E2A85A3890030240D /* GlobalDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3CB5D2A85A3890030240D /* GlobalDialogs.swift */; };
 		1DA3CB602A85A3B40030240D /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3CB5F2A85A3B40030240D /* Signal.swift */; };
 		1DA3CB622A85A98B0030240D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3CB612A85A98B0030240D /* ErrorView.swift */; };
@@ -39,8 +42,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D980CBC2A8A99C80098EF77 /* LangLearnCore.framework in Embed Frameworks */,
+				1D8FAAA62A982EBD00A06483 /* LangLearnCore.framework in Embed Frameworks */,
 				1D3CFCE52A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Embed Frameworks */,
+				1D8FAAA72A982ECE00A06483 /* Essentials in Embed Frameworks */,
 				1D3CFCDB2A85242200BF2816 /* AsyncNinja.framework in Embed Frameworks */,
 				1D3CFCDE2A85258600BF2816 /* AppCore.framework in Embed Frameworks */,
 			);
@@ -58,6 +62,7 @@
 		1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinjaReactiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6908312A85DB5A00FAE305 /* LanguageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelector.swift; sourceTree = "<group>"; };
 		1D6908332A85DC5D00FAE305 /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		1D8FAA9F2A982DD300A06483 /* AnyLangLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = AnyLangLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D980CBA2A8A99C80098EF77 /* LangLearnCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LangLearnCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA3CB5D2A85A3890030240D /* GlobalDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDialogs.swift; sourceTree = "<group>"; };
 		1DA3CB5F2A85A3B40030240D /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
@@ -77,12 +82,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D980CC62A8AA4160098EF77 /* RealmSwift in Frameworks */,
-				1D980CBB2A8A99C80098EF77 /* LangLearnCore.framework in Frameworks */,
+				1D8FAAA52A982EBD00A06483 /* LangLearnCore.framework in Frameworks */,
 				1D3CFCE42A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Frameworks */,
+				1D8FAAAB2A98327700A06483 /* RealmSwift in Frameworks */,
 				1D3CFCDA2A85242200BF2816 /* AsyncNinja.framework in Frameworks */,
+				1D8FAAA42A982EA300A06483 /* Essentials in Frameworks */,
 				1D3CFCDD2A85258600BF2816 /* AppCore.framework in Frameworks */,
-				1D980CC42A8AA4160098EF77 /* Realm in Frameworks */,
+				1D8FAAA82A98318300A06483 /* AppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +106,7 @@
 		1D3CFCD82A85242200BF2816 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D8FAA9F2A982DD300A06483 /* AnyLangLearn.app */,
 				1D980CBA2A8A99C80098EF77 /* LangLearnCore.framework */,
 				1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */,
 				1D3CFCDC2A85258600BF2816 /* AppCore.framework */,
@@ -205,8 +212,8 @@
 			);
 			name = BDCreator;
 			packageProductDependencies = (
-				1D980CC32A8AA4160098EF77 /* Realm */,
-				1D980CC52A8AA4160098EF77 /* RealmSwift */,
+				1D8FAAA32A982EA300A06483 /* Essentials */,
+				1D8FAAAA2A98327700A06483 /* RealmSwift */,
 			);
 			productName = BDCreator;
 			productReference = 1DE02B312A851D00007179D7 /* BDCreator.app */;
@@ -237,8 +244,8 @@
 			);
 			mainGroup = 1DE02B282A851D00007179D7;
 			packageReferences = (
-				1D980CAF2A8A95130098EF77 /* XCRemoteSwiftPackageReference "essentials" */,
-				1D980CC22A8AA4160098EF77 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				1D8FAAA22A982EA300A06483 /* XCRemoteSwiftPackageReference "essentials" */,
+				1D8FAAA92A98327600A06483 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 1DE02B322A851D00007179D7 /* Products */;
 			projectDirPath = "";
@@ -256,6 +263,7 @@
 			files = (
 				1DE02B3C2A851D01007179D7 /* Preview Assets.xcassets in Resources */,
 				1DE02B392A851D01007179D7 /* Assets.xcassets in Resources */,
+				1D8FAAA02A982DD300A06483 /* AnyLangLearn.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +488,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1D980CAF2A8A95130098EF77 /* XCRemoteSwiftPackageReference "essentials" */ = {
+		1D8FAAA22A982EA300A06483 /* XCRemoteSwiftPackageReference "essentials" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.com/sergiy.vynnychenko/essentials.git";
 			requirement = {
@@ -488,7 +496,7 @@
 				kind = branch;
 			};
 		};
-		1D980CC22A8AA4160098EF77 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		1D8FAAA92A98327600A06483 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -499,14 +507,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D980CC32A8AA4160098EF77 /* Realm */ = {
+		1D8FAAA32A982EA300A06483 /* Essentials */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1D980CC22A8AA4160098EF77 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
+			package = 1D8FAAA22A982EA300A06483 /* XCRemoteSwiftPackageReference "essentials" */;
+			productName = Essentials;
 		};
-		1D980CC52A8AA4160098EF77 /* RealmSwift */ = {
+		1D8FAAAA2A98327700A06483 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1D980CC22A8AA4160098EF77 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 1D8FAAA92A98327600A06483 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

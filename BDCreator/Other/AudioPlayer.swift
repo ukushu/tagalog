@@ -3,6 +3,7 @@ import AVFoundation
 import AVFAudio
 import SwiftUI
 import AppCore
+import Essentials
 
 struct AudioPlayerView: View {
     let audioUrl: String?

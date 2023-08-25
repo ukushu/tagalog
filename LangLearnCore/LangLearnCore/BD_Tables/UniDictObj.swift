@@ -18,7 +18,7 @@ public class UniDictObj: Object {
 }
 
 public extension UniDictObj {
-    public var wordsUsed: [String] {
+    var wordsUsed: [String] {
         translation
             .replacingOccurrences(of: ".", with: "")
             .replacingOccurrences(of: ",", with: "")
