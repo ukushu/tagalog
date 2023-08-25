@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D1524812A98367E0063EA6D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D1524802A98367E0063EA6D /* RealmSwift */; };
+		1D1524892A983F970063EA6D /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D1524882A983F970063EA6D /* MoreSwiftUI */; };
 		1D3A86112A88A2680081857F /* PhraseDisplayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86102A88A2680081857F /* PhraseDisplayerView.swift */; };
 		1D3A86162A89C6760081857F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A86152A89C6760081857F /* AudioPlayer.swift */; };
 		1D3CFCDA2A85242200BF2816 /* AsyncNinja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCD92A85242200BF2816 /* AsyncNinja.framework */; };
@@ -18,7 +19,6 @@
 		1D3CFCE52A85269E00BF2816 /* AsyncNinjaReactiveUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CFCE32A85269E00BF2816 /* AsyncNinjaReactiveUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D6908322A85DB5A00FAE305 /* LanguageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6908312A85DB5A00FAE305 /* LanguageSelector.swift */; };
 		1D6908342A85DC5D00FAE305 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6908332A85DC5D00FAE305 /* DropDown.swift */; };
-		1D8FAAA02A982DD300A06483 /* AnyLangLearn.app in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FAA9F2A982DD300A06483 /* AnyLangLearn.app */; };
 		1D8FAAA42A982EA300A06483 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8FAAA32A982EA300A06483 /* Essentials */; };
 		1D8FAAA52A982EBD00A06483 /* LangLearnCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D980CBA2A8A99C80098EF77 /* LangLearnCore.framework */; };
 		1D8FAAA62A982EBD00A06483 /* LangLearnCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D980CBA2A8A99C80098EF77 /* LangLearnCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -87,6 +87,7 @@
 				1D3CFCDA2A85242200BF2816 /* AsyncNinja.framework in Frameworks */,
 				1D8FAAA42A982EA300A06483 /* Essentials in Frameworks */,
 				1D3CFCDD2A85258600BF2816 /* AppCore.framework in Frameworks */,
+				1D1524892A983F970063EA6D /* MoreSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +213,7 @@
 			packageProductDependencies = (
 				1D8FAAA32A982EA300A06483 /* Essentials */,
 				1D1524802A98367E0063EA6D /* RealmSwift */,
+				1D1524882A983F970063EA6D /* MoreSwiftUI */,
 			);
 			productName = BDCreator;
 			productReference = 1DE02B312A851D00007179D7 /* BDCreator.app */;
@@ -261,7 +263,6 @@
 			files = (
 				1DE02B3C2A851D01007179D7 /* Preview Assets.xcassets in Resources */,
 				1DE02B392A851D01007179D7 /* Assets.xcassets in Resources */,
-				1D8FAAA02A982DD300A06483 /* AnyLangLearn.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +510,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1D15247F2A98367E0063EA6D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		1D1524882A983F970063EA6D /* MoreSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoreSwiftUI;
 		};
 		1D8FAAA32A982EA300A06483 /* Essentials */ = {
 			isa = XCSwiftPackageProductDependency;

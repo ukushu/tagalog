@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1524852A983E3B0063EA6D /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D1524842A983E3B0063EA6D /* Essentials */; };
 		1D980CAB2A8A933A0098EF77 /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CAA2A8A933A0098EF77 /* MoreSwiftUI */; };
 		1D980CB22A8A968D0098EF77 /* RealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D980CB12A8A968D0098EF77 /* RealmWrapper.swift */; };
 		1D980CB52A8A99120098EF77 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1D980CB42A8A99120098EF77 /* Realm */; };
@@ -14,6 +15,19 @@
 		1D980CB92A8A99950098EF77 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D980CB82A8A99950098EF77 /* Language.swift */; };
 		1D980CBE2A8A9B220098EF77 /* UniDictObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D980CBD2A8A9B220098EF77 /* UniDictObj.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1D1524872A983E3B0063EA6D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D980C9F2A8A92880098EF77 /* LangLearnCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LangLearnCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D980CB72A8A99120098EF77 /* RealmSwift in Frameworks */,
+				1D1524852A983E3B0063EA6D /* Essentials in Frameworks */,
 				1D980CB52A8A99120098EF77 /* Realm in Frameworks */,
 				1D980CAB2A8A933A0098EF77 /* MoreSwiftUI in Frameworks */,
 			);
@@ -99,6 +114,7 @@
 				1D980C9B2A8A92880098EF77 /* Sources */,
 				1D980C9C2A8A92880098EF77 /* Frameworks */,
 				1D980C9D2A8A92880098EF77 /* Resources */,
+				1D1524872A983E3B0063EA6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -109,6 +125,7 @@
 				1D980CAA2A8A933A0098EF77 /* MoreSwiftUI */,
 				1D980CB42A8A99120098EF77 /* Realm */,
 				1D980CB62A8A99120098EF77 /* RealmSwift */,
+				1D1524842A983E3B0063EA6D /* Essentials */,
 			);
 			productName = LangLearnCore;
 			productReference = 1D980C9F2A8A92880098EF77 /* LangLearnCore.framework */;
@@ -406,6 +423,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1D1524842A983E3B0063EA6D /* Essentials */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D980CB02A8A957E0098EF77 /* XCRemoteSwiftPackageReference "essentials" */;
+			productName = Essentials;
+		};
 		1D980CAA2A8A933A0098EF77 /* MoreSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MoreSwiftUI;
