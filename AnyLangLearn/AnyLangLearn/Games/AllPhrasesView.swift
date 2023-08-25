@@ -4,6 +4,8 @@ import AppCore
 import MoreSwiftUI
 
 struct AllPhrasesView: View {
+    @ObservedObject var model = MainViewModel.shared
+    
     let origs: [String] = ["a1","b1","c1","d","5","6"]
     
     @State var selection: Set<String> = []

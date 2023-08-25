@@ -3,6 +3,8 @@ import SwiftUI
 import Essentials
 
 struct PairPhrasesView: View {
+    @ObservedObject var model = MainViewModel.shared
+    
     @State var selected: [Pair] = []
     
     @State var pairs: [Pair] = [
