@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import AppCore
+import MoreSwiftUI
 
 struct AllPhrasesView: View {
     let origs: [String] = ["a1","b1","c1","d","5","6"]

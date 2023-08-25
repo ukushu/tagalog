@@ -1,5 +1,6 @@
 import Foundation
 import RealmSwift
+import Essentials
 
 public class UniDictObj: Object {
     @Persisted(primaryKey: true) public var id: String = UUID().uuidString

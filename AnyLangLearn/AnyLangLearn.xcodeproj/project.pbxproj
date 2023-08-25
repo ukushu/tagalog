@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1524832A983D500063EA6D /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D1524822A983D500063EA6D /* MoreSwiftUI */; };
 		1D3A85EC2A886E160081857F /* AnyLangLearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A85EB2A886E160081857F /* AnyLangLearnApp.swift */; };
 		1D3A85EE2A886E160081857F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A85ED2A886E160081857F /* MainView.swift */; };
 		1D3A85F02A886E180081857F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A85EF2A886E180081857F /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 				1D3A86002A887ADD0081857F /* AsyncNinja.framework in Frameworks */,
 				1D3A85FC2A887AA00081857F /* AppCore.framework in Frameworks */,
 				1D8FAA962A981F1800A06483 /* Realm in Frameworks */,
+				1D1524832A983D500063EA6D /* MoreSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +153,7 @@
 			packageProductDependencies = (
 				1D980CC72A8AB1150098EF77 /* Essentials */,
 				1D8FAA952A981F1800A06483 /* Realm */,
+				1D1524822A983D500063EA6D /* MoreSwiftUI */,
 			);
 			productName = AnyLangLearn;
 			productReference = 1D3A85E82A886E160081857F /* AnyLangLearn.app */;
@@ -353,6 +356,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chekaZuja.AnyLangLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -380,6 +384,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chekaZuja.AnyLangLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +436,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1D1524822A983D500063EA6D /* MoreSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoreSwiftUI;
+		};
 		1D8FAA952A981F1800A06483 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1D8FAA942A981F1800A06483 /* XCRemoteSwiftPackageReference "realm-swift" */;
