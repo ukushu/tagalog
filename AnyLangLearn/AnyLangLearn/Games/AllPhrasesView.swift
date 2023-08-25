@@ -8,15 +8,13 @@ struct AllPhrasesView: View {
     
     let origs: [String] = ["a1","b1","c1","d","5","6"]
     
-    @State var selection: Set<String> = []
-    
     let word1 = "asdf"
     let word2 = "fdsa"
     
     var body: some View {
         HSplitView {
-            List(origs, id:\.self, selection: $selection) { text in
-                Text(text)
+            List(model.translations, selection: $model.selection) { obj in
+                Text(obj.translation)
                     .fixedSize(horizontal: true, vertical: false)
             }
             .frame(minWidth: 200)

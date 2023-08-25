@@ -14,11 +14,13 @@ public class RealmWrapper {
     public var allLesssonsNums: [Int] { realm.objects(UniDictObj.self).distinct(by: ["lessonNum"]).compactMap{ $0.lessonNum }.sorted() }
     
     public init() {
-        
         let objectTypes = [UniDictObj.self]
         
-        let config = Realm.Configuration(encryptionKey: nil, schemaVersion: 4, objectTypes: objectTypes)
+        let bdUrlBase = URL.userHomePath.asURL().appendingPathComponent("AnyLangLearn")
+        let _ = bdUrlBase.makeSureDirExist()
+        let bdUrl = bdUrlBase.appendingPathComponent("db.realm")
         
+        let config = Realm.Configuration(fileURL: bdUrl, encryptionKey: nil, schemaVersion: 4, objectTypes: objectTypes)
         
         self.realm = try! Realm(configuration: config)
         
